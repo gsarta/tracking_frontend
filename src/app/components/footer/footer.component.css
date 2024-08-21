@@ -1,0 +1,9 @@
+.custom-footer {
+    background-color: #007bff; /* Cambia este color según tu preferencia */
+}
+.custom-footer a {
+    color: #f8f9fa; /* Cambia este color según tu preferencia */
+}
+.custom-footer a:hover {
+    color: #e9ecef; /* Cambia este color según tu preferencia */
+}

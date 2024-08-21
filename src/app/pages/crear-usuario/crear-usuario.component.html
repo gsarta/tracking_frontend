@@ -1,0 +1,52 @@
+<form [formGroup]="formcrearusuario" (ngSubmit)="registrarse()" >
+    <div class="container w-50 mt-5 rounded shadow">
+        <h2 class="text-center mb-4">Crear Cuenta</h2>
+          
+        <!--NOMBRE COMPLETO-->
+          <div class="mb-5">
+            <label for="fullname" class="form-label">Nombre Completo</label>
+            <input  [ngClass]="{'is-invalid': hasError('username', 'required') || hasError('username','minlength')}" 
+            type="text" class="form-control" id="fullname" formControlName="fullname">
+            <div class="text-danger" *ngIf="hasError('username', 'required')" >- El campo es requerido</div>
+            <div class="text-danger" *ngIf="hasError('username', 'minlength')" >El nombre requiere mínimo 5 caracteres</div>
+          </div>
+    
+          <!--USUARIO-->
+          <div class="mb-5">
+            <label for="username" class="form-label">Usuario</label>
+            <input type="text" [ngClass]="{'is-invalid': hasError('username', 'required') || hasError('username','minlength')}" 
+            class="form-control" id="username" formControlName="username">
+            <div class="text-danger" *ngIf="hasError('username', 'required')" >- El campo es requerido</div>
+            <div class="text-danger" *ngIf="hasError('username', 'minlength')" >El usuario requiere mínimo 5 caracteres</div>
+          </div>
+    
+          <!--CONTRASEÑA-->
+          <div class="mb-5">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" [ngClass]="{'is-invalid': hasError('password', 'required')}" 
+                   class="form-control" id="password" formControlName="password">
+                   <div class="text-danger" *ngIf="hasError('username', 'required')" >- El campo es requerido</div>
+                   <div class="text-danger" *ngIf="hasError('username', 'minlength')" >El usuario requiere mínimo 5 caracteres</div>
+          </div>
+    
+    
+          <div class="mb-5">
+            <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+            <input type="password" [ngClass]="{'is-invalid': hasError('confirmPassword', 'required') || formcrearusuario.hasError( 'passwordMismatch')}" 
+                   class="form-control" id="confirmPassword" formControlName="confirmPassword">
+            <div class="text-danger" *ngIf="hasError('confirmPassword', 'required')">- El campo es requerido</div>
+            <div class="text-danger" *ngIf="formcrearusuario.hasError('passwordMismatch')">Las contraseñas no coinciden</div>
+          </div>
+          
+          <div class="grid gap-0 column-gap-3" >
+            <div class="p-2 g-col-6"></div>
+            <div class="p-2 g-col-6"></div>
+          </div>
+    
+          <button type="submit" class="btn btn-primary me-3"  >Registrarse</button>
+          
+          <button type="button" class="btn btn-outline-danger" (click)="goback()" >Volver a la pagina de inicio</button>
+          <div><br></div>
+        </div>
+      </form>
+      

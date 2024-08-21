@@ -1,0 +1,60 @@
+
+<form  [formGroup]="formularioLogin" (ngSubmit)="loggear()">
+
+    <div class="container w-75   rounded shadow" >
+        <div class="row align-items-stretch ">
+    
+            <div class="col background d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+               
+            </div>
+            
+            <div class="col p-5 rounded">
+                <div class="text-start">
+                    
+                    <h2 class="fw-bold text-center py-2 ">Bienvenido</h2>
+                  
+    
+                    <!--Log In-->
+    
+    
+                        <div class="mb-4">
+                            <label for="username" class="form-label">Usuario</label>
+                            <input [ngClass]="{'is-invalid': hasError('username', 'required') || hasError('username','minlength')}" 
+                            type="text" class="form-control" id="username" formControlName="username">
+                            <div class="text-danger" *ngIf="hasError('username', 'required')" >Nombre requerido</div>
+                            <div class="text-danger" *ngIf="hasError('username', 'minlength')" >El nombre requiere mínimo 5 caracteres</div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input [ngClass]="{'is-invalid': hasError('password', 'required')|| hasError('password','Contraseña')}" 
+                            type="password" class="form-control" id="password" formControlName="password">
+                            <div class="text-danger" *ngIf="hasError('password', 'required')" >Contraseña requerida</div>
+                            <div class="text-danger" *ngIf="hasError('password', 'minlength')" >La contraseña requiere mínimo 5 caracteres</div>
+                        </div>
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" id="connected" name="connected" class="form-check-input" disabled>
+                            <label for="connected" class="form-check-label text-muted" >Mantenerme conectado</label>
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        </div>
+    
+                        <div *ngIf="hasErrors" class="alert alert-danger">
+                            <p>{{errorMessage}}</p>
+                        </div>
+                 
+                        <div class="my-3">
+                            <span>¿No tienes una cuenta?
+                                <a class=" link-style" routerLink="/crear-usuario" >Regístrate aqui</a>
+                            </span> 
+                           <p><a class="link-style" routerLink="/recuperar-password" >Recuperar Password</a><p>
+                           
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    
+    

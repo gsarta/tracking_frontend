@@ -1,0 +1,52 @@
+.fondo-degrade {
+    background: linear-gradient(to right,black,rgb(134, 22, 22));
+    height: 100vh;
+}
+.background{
+    background-image: url('/assets/imagenes/tracking.jpg');
+    background-position: center center;
+    background-size: cover;
+    height: 100hv;
+}
+
+p{
+    color: rgb(173, 173, 241);
+}
+
+.link-style {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link-style:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .containeras {
+    display: grid;
+    place-items: center; /* Centra horizontal y verticalmente */
+    height: 100vh;       /* Altura completa de la ventana */
+  }
+
+h2 {
+    color: #007bff;
+    
+  }
+
+div {
+    color: #007bff;
+}
+
+.grey{      
+    color: grey;
+}
+span{
+    color: grey;
+}
