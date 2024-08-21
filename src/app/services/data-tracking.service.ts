@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser } from '../models/user.model';
 import { Observable } from 'rxjs';
-import { Itoken } from '../models/token.user.model';
+
 import { IdataTracking } from '../models/data-tracking';
 
 

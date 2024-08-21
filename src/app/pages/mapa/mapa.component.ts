@@ -69,6 +69,7 @@ export class MapaComponent implements OnInit {
     error:(err) => {
       // this.hasErrors = true;
       // this.errorMessage= "Error fetching graph: " + err.message;
+      
     }
   });
     
